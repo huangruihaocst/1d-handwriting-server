@@ -1,0 +1,34 @@
+- User: String
+- Timestamp: Double (ms)
+
+- CharTask[]
+    - Letter: String
+    - Task start time: Double ?
+    - Stroke[]
+        - start time: Double
+        - length: Double
+        - direction: Int
+    - End time: Double
+    - Predicted letters: String
+    - DidDelete: Bool
+    - IsCorrect: Int
+    - Mode: Int ?
+        - Learning 0
+        - Recite 1
+    - Best Score (time): Double ?
+	    - Elapsed time
+	    - Gesturing time
+
+- Word[]
+    - Word: String
+    - Task start time: Double
+    - CharTask[]
+    - End time: Double
+    - Predicted words: String[]
+    - IsCorrect: Int
+    - Best Score: Double
+    	    - Elapsed time
+	    - Gesturing time
+
+https://jsonformatter.curiousconcept.com
+

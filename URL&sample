@@ -1,0 +1,18 @@
+URL:
+post : /post
+char best score : /best/char
+word best score : /best/word
+
+
+sample result:
+post : 
+{"char_task":[{"letter":"a","task_start_time":200,"end_time":500,"mode":1},{"letter":"b","task_start_time":200,"end_time":900,"mode":1},{"letter":"c","task_start_time":100,"end_time":200,"mode":1}],"word":[{"word":"kotori","task_start_time":200,"end_time":500},{"word":"umi","task_start_time":200,"end_time":1000},{"word":"honoka","task_start_time":0,"end_time":200}]}
+return value : success, incorrect_json_format(same reuturn code 200)
+
+best score for char : 
+return value : [{"letter":"a","best_score":300,"amount":1,"average":300},{"letter":"b","best_score":700,"amount":1,"average":700},{"letter":"c","best_score":100,"amount":1,"average":100},{"letter":"d","best_score":4144959,"amount":0,"average":0},{"letter":"e","best_score":4144959,"amount":0,"average":0},{"letter":"f","best_score":4144959,"amount":0,"average":0},{"letter":"g","best_score":4144959,"amount":0,"average":0},{"letter":"h","best_score":4144959,"amount":0,"average":0},{"letter":"i","best_score":4144959,"amount":0,"average":0},{"letter":"j","best_score":4144959,"amount":0,"average":0},{"letter":"k","best_score":4144959,"amount":0,"average":0},{"letter":"l","best_score":4144959,"amount":0,"average":0},{"letter":"m","best_score":4144959,"amount":0,"average":0},{"letter":"n","best_score":4144959,"amount":0,"average":0},{"letter":"o","best_score":4144959,"amount":0,"average":0},{"letter":"p","best_score":4144959,"amount":0,"average":0},{"letter":"q","best_score":4144959,"amount":0,"average":0},{"letter":"r","best_score":4144959,"amount":0,"average":0},{"letter":"s","best_score":4144959,"amount":0,"average":0},{"letter":"t","best_score":4144959,"amount":0,"average":0},{"letter":"u","best_score":4144959,"amount":0,"average":0},{"letter":"v","best_score":4144959,"amount":0,"average":0},{"letter":"w","best_score":4144959,"amount":0,"average":0},{"letter":"x","best_score":4144959,"amount":0,"average":0},{"letter":"y","best_score":4144959,"amount":0,"average":0},{"letter":"z","best_score":4144959,"amount":0,"average":0}]
+return code : 200
+
+best score for word :
+return value : [{"word":"kotori","amount":1,"average":300,"best_score":300},{"word":"umi","amount":1,"average":800,"best_score":800},{"word":"honoka","amount":1,"average":200,"best_score":200}]
+return code : 200
