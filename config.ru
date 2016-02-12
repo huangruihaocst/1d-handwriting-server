@@ -26,7 +26,10 @@ def count_spent_time (hash)
 end
 
 run lambda { |env|
-  if env['REQUEST_URI'] == '/post'
+    
+  url = '/' + env['REQUEST_URI'].split('/')[3..-1].join('/')
+
+  if url == '/post'
 
     #read in and add to old hash
     content = env['rack.input'].read.to_s
@@ -125,11 +128,11 @@ run lambda { |env|
     best_file.close
 
     ['200', {'Content-Type' => 'text/html'}, ['success']]
-  elsif env['REQUEST_URI'] == '/best/char'
+  elsif url == '/best/char'
     file = open('data/best_char', 'r')
     content = file.read.to_s
     ['200', {'Content-Type' => 'text/html'}, [content]]
-  elsif env['REQUEST_URI'] == '/best/word'
+  elsif url == '/best/word'
     file = open('data/best_word', 'r')
     content = file.read.to_s
     ['200', {'Content-Type' => 'text/html'}, [content]]
