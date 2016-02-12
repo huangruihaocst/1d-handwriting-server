@@ -1,9 +1,6 @@
 require 'rubygems'
 require 'json'
 
-host = '127.0.0.1'
-port = '9292'
-
 def init_best_char (file)
   new_array = []
   (97..122).each do |i|
@@ -29,7 +26,7 @@ def count_spent_time (hash)
 end
 
 run lambda { |env|
-  if env['REQUEST_URI'] == 'http://' + host + ':' + port + '/post'
+  if env['REQUEST_URI'] == '/post'
 
     #read in and add to old hash
     content = env['rack.input'].read.to_s
@@ -128,11 +125,11 @@ run lambda { |env|
     best_file.close
 
     ['200', {'Content-Type' => 'text/html'}, ['success']]
-  elsif env['REQUEST_URI'] == 'http://' + host + ':' + port + '/best/char'
+  elsif env['REQUEST_URI'] == '/best/char'
     file = open('data/best_char', 'r')
     content = file.read.to_s
     ['200', {'Content-Type' => 'text/html'}, [content]]
-  elsif env['REQUEST_URI'] == 'http://' + host + ':' + port + '/best/word'
+  elsif env['REQUEST_URI'] == '/best/word'
     file = open('data/best_word', 'r')
     content = file.read.to_s
     ['200', {'Content-Type' => 'text/html'}, [content]]
